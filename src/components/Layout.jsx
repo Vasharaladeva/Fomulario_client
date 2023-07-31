@@ -8,19 +8,13 @@ function Layout() {
 
                 <h2 className='text-4xl font-black text-center text-white'>Travelero</h2>
                 <nav className='mt-10'>
-                    <Link
-                        className={`${location.pathname === '/' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
-                        to="/">Lista</Link>
 
-                    <Link
-                        className={`${location.pathname === '/clientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
-                        to="/clientes/nuevo">Escanear Estudiante</Link>
+
+
                     <Link
                         className={`${location.pathname === '/formulario' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
                         to="/formulario">Formulario</Link>
-                    <Link
-                        className={`${location.pathname === '/inactivo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
-                        to="/inactivo">Lista Inactivo</Link>
+
                 </nav>
             </aside>
 
