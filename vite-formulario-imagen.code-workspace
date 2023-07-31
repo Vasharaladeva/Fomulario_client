@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "vite-formulario-imagen",
+			"path": "."
+		},
+		{
+			"name": "src",
+			"path": "../../estudiantes-v1.0-main/vite-formulario-imagen/src"
+		}
+	],
+	"settings": {}
+}
