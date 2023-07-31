@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { useState, useEffect } from 'react';
 import SimpleReactValidator from 'simple-react-validator';
+import { redirect,Outlet } from 'react-router-dom';
 
 const AddParejaForm = () => {
   const [value, setValue] = useState({
@@ -92,6 +93,7 @@ const AddParejaForm = () => {
 
       // Limpiar los campos del formulario y las URLs de las imágenes después de agregar exitosamente
       setValue({
+        nombre: '',
         apellido: '',
         email: '',
         carnet: '',
@@ -99,7 +101,6 @@ const AddParejaForm = () => {
         colegio: '',
         promocion: '',
         destino: '',
-        nombre: '',
       });
       setImageUrls({
         imagenDocumento: null,
@@ -113,6 +114,7 @@ const AddParejaForm = () => {
         imagenPermiso: null,
         imagenPerfil:null
       });
+      redirect('/');
     } catch (error) {
       console.log(error);
       toast.error('Hubo un error al agregar el estudiante');
@@ -123,9 +125,9 @@ const AddParejaForm = () => {
     <>
       <ToastContainer />
 
-      <form className="space-y-6"  onSubmit={submitForm}>
+      <form onSubmit={submitForm}>
         <div className="space-y-12">
-          <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:p-6">
+          <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">Llenar todos los campos</h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">
               Llenar todos los campos y proporcionar sus datos personales.
@@ -409,26 +411,23 @@ const AddParejaForm = () => {
                 </div>
               </div>
 
-          <p>Espera hasta que aparesca se agrego el Estudiante</p>
+  
+
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex items-center justify-end gap-x-6">
+          <p>Espera hasta que nuestro servidor analice sus datos no forzar </p>
           <button
             type="submit"
             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Enviar
           </button>
-          
-
-
-            </div>
-          </div>
-          
+          <Outlet />
         </div>
-
-
       </form>
-
-      
-      
     </>
 
   )
